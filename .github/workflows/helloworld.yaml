@@ -27,4 +27,4 @@ jobs:
         run: docker pull hello-world
         
       - name: Run Docker container
-        run: docker run hell-world
+        run: docker run hello-world
