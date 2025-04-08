@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}      
           
-      - name: Pull Docker Image
+      - name: Pull Docker Image from github
         run: docker pull hello-world
         
       - name: Run Docker container
