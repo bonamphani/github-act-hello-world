@@ -1,0 +1,18 @@
+
+
+#hello world printing with github actions
+name: Hello world
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      -name: hello world from Docker
+       run: docker run hell-world
