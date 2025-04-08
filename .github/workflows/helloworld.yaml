@@ -23,11 +23,10 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}      
           
-      - name: Pull Docker Image from github
-        run: docker pull hello-world
-        
-      - name: Run Docker container
-        run: docker run hello-world
+      - name: Run web server container for 10 minutes
+        run: |
+          docker run -d --name web-server -p 8080:8000 python:3 python -m http.server 8000
+          sleep 600  # Wait for 10 minutes
+          docker stop web-server
 
-      - name: docker push
-        run: docker push hello-world:latest  
+
